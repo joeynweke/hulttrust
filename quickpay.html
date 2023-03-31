@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulttrust bank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="module" defer></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="utils.js" type="module" defer></script>
+</head>
+<body>
+
+    <div class="wrapper" id="wrapper">
+        <div class="menu-close" id="menu-con">
+            <div class="menu-top">
+
+                    <a>
+                        <img src="" class="profile-photo images" alt="profile photo">
+                    </a>
+                    <h2 class="name"></h2>
+                    <span id="menu-close">
+                        <img src="images/cancel.png" class="menu-cancel" alt="">
+                    </span>
+                
+            </div>
+    
+            <div class="menu-body">
+                <img src="images/menubar.png" alt="">
+                <a href="#">
+                    <h3>Edit Profile</h3>
+                </a>
+            </div>
+    
+            <div class="menu-body">
+                <img src="images/home.png" alt="">
+                <a href="#">
+                    <h3>Emergency</h3>
+                </a>
+            </div>
+    
+            <div class="menu-body">
+                <img src="images/offer.png" alt="">
+                <a href="#">
+                    <h3>Reward Points</h3>
+                </a>
+            </div>
+    
+            <div class="menu-body">
+                <img src="images/iphone.png" alt="">
+                <a href="#">
+                    <h3>Support</h3>
+                </a>
+            </div>
+    
+        </div>
+
+            <div class="support-con-blank" id="support-con">
+                
+                    <div class="support-menu">
+                        <span class="go-back" id="go-back">
+                            <img src="images/cancel.png" class="support-cancel" alt="">
+                        </span>
+                        <br>
+                        <br>
+                        <br>
+                        <div>
+                            <h1 class="h1">PERSONAL ASSISTANT</h1>
+                        </div>
+                    </div>
+                    
+                
+
+                <h1 class="h1">What can I help you with</h1>
+
+                <div class="support-content-con">
+                    <p class="support-p1">
+                        Hi I'm Joe, your personal <br>
+                        assistant from Payeet.
+                    </p>
+
+                    <p class="support-p2">
+                        I will like to block my <br>
+                        debit card
+                    </p>
+
+                    <p class="support-p1">
+                        Sure, Here is how you can <br>
+                        proceed.
+                        <br>
+                        <br>
+                        1. Go to Emergency <br>
+                        section from your menu.
+                        <br>
+                        <br>
+                        2. Select pause my card option.
+                    </p>
+                </div>
+
+                <div class="support-btn">
+                    <button class="emergency-btn" id="emergency-btn">Emergency</button>
+                    <button class="pause-btn" id="pause-btn">Pause My Card</button>
+                </div>
+
+                <div class="support-query">
+                    <input tpe="text" class="support-text" id="support-text" placeholder="Type your query here">
+                    <button class="support-query-btn">Send</button>
+                </div>
+        </div>
+
+        
+        <div class="home-con">
+
+            <div>
+                <div class="home-header" id="home-header">
+                    <div class="google">
+                        <div class="google" id="google_translate_element"></div>
+                        <script type="text/javascript">
+                            function googleTranslateElementInit() {
+                              new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script>
+                    
+                    </div>
+                    <div class="home-menu">
+                    <img src="images/menubar.png" class="menu-bar" id="menu-bar" alt="menu" width="40px">
+                    <a href="home.html">
+                        <h2 class="heading"></h2>
+                    </a>
+                    </div>
+                    <div>
+                        <img src="images/support.png" class="support" id="support" alt="support" width="40px">
+                    </div>
+    
+                </div>
+                
+                
+                <div id="modal">
+                <div class="home-body">
+                    <div class="fake-sender" style="font-size: 20px; color: red;"></div>
+                    <div>
+                        <h2>Make your payment</h2>
+                    </div>
+                    <br>
+                    <form class="pay-form">
+                        <div>
+                            <label for="account-name">Account Name</label>
+                            <input type="text"  name="account-name" id="account-name" required>
+                        </div>
+
+                        <div>
+                            <label for="amount">Amount</label>
+                            <input type="number" name="amount" id="amount" required>
+                        </div>
+
+                        <div>
+                            <label for="routing-number">Routing Number</label>
+                            <input type="number" name="routing-number" id="routing" required>
+                        </div>
+
+                        <div>
+                            <label for="sort">Sort Code</label>
+                            <input type="number" name="sort" id="sort" required>
+                        </div>
+
+                        <div>
+                            <label for="password">Secret Pin</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button id="send-now">Send Now</button>
+                    </form>
+                </div>
+            
+                <h2 class="loading">Loading..</h2>
+                <div class="success">
+                    <h2>Payment Successful</h2>
+                    <img src="images/payment.jpg" alt="" height="80%" width="80%">
+                    <button onclick="(location.href='home.html')">Complete</button>
+                </div>
+                
+            </div>
+    
+            <footer>
+                <div>
+                    <a href="home.html"  class="home">
+                        <img src="images/home.png" alt="home" width="40px">
+        
+                        <span>Home</span>
+                    </a>
+                </div>
+        
+                <div>
+                    <a href="pay.html"  class="pay">
+                        <img src="images/pay.png" alt="pay" width="40px">
+                    
+                        <span>Pay</span>
+                    </a>
+                </div>
+        
+                <div>
+                    <a href="offer.html"  class="offer">
+                        <img src="images/offer.png" alt="offer" width="40px">
+                    
+                        <span>Offer</span>
+                    </a>
+                </div>
+        
+                <div>
+                    <a href="account.html"  class="account">
+                        <img src="images/account.png" alt="account" width="40px">
+                    
+                        <span>Account</span>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+</body>
+
+</html>
