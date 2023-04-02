@@ -379,6 +379,14 @@ span{
     width: 55px;
 }
 
+.logout{
+    font-size: 23px;
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
 
 .menu-top{
     display: flex;

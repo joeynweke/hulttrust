@@ -21,10 +21,11 @@ const loading = document.querySelector(".loading")
 const images = document.querySelectorAll(".images")
 const savingsCard = document.getElementById("savings-card")
 const fakeSender = document.querySelector(".fake-sender")
+const logout = document.querySelectorAll(".logout");
 const routing = document.getElementById("routing");
 const sort = document.getElementById("sort");
 const password = document.getElementById("password");
-
+const continueBtn = document.querySelector("#continue")
 
 const myDate = new Date()
 
@@ -124,34 +125,59 @@ try {
 }
 Login()
 
-// refresh local storage
+//refresh local storage
 // localStorage.removeItem("item")
 // localStorage.removeItem("items")
 // localStorage.removeItem("Data")
 
 let item2 = JSON.parse(localStorage.getItem("item"));
-function displayData() {
+const local = JSON.parse(localStorage.getItem("Data"));
+
+ function displayData() {
     try {
       heading.forEach((item) => {
-        item.innerHTML = item2 ? item2.bankName : get.bankName;
+        if(local) {
+          item.innerHTML = local.bankName
+        } else if(item2) {
+          item.innerHTML = item2.bankName
+        }
+        else{
+          item.innerHTML = get.bankName;
+        }
       });
       images.forEach((image) => {
-        image.src = item2 ? item2.imgURL : get.url
+        if(local) {
+          image.src = local.imgURL
+        } else if(item2) {
+          image.src = item2.imgURL
+        }
+        else{
+          image.src = get.url
+        }
       })
       
       clientName.forEach((item) => {
-        item.innerHTML = item2 ? item2.name : get.owner;
+        if(local) {
+          item.innerHTML =  local.name;
+        } else if(item2){
+          item.innerHTML = item2.name
+        }
+        else{
+          item.innerHTML = get.owner;
+        }
       });
+      
       const savedValue = JSON.parse(localStorage.getItem("items"));
-      const Local = JSON.parse(localStorage.getItem("Data"));
-      if (savedValue) {
-        Data.savings = Local ? Local.savings : savedValue.amountData;
+
+      if (savedValue && savedValue.amountData) {
+        Data.savings = local ? local.savings : savedValue.amountData;
       }
+      
       savingsAmount.innerHTML = "$" + Data.savings.toLocaleString();
       
     } 
     catch (error) {
-      return null;
+      return null
     }
   }
   
@@ -176,42 +202,64 @@ function sendFund() {
         }
 
         if (sentAmount <= 0 || isNaN(sentAmount)) {
-          fakeSender.innerHTML = 'ERROR: Please enter the amount'
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: Please enter the amount';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
           return;
         }
 
         if(!password.value || !routing.value || !sort.value){
-          fakeSender.innerHTML = 'ERROR: All the informations are required'
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: All the informations are required';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
           return;
         }
 
         if(amount.value > Data.fixedAmount) {
           setTimeout(() => {
             fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payments,Try again in 15 days';
-          },2000)
+          },5000)
           return
         }
-        
       
         const Local = JSON.parse(localStorage.getItem("items"))
         const newSavingsAmount = Local.amountData - sentAmount;
         const newSenderVal = senderValue.toLocaleString()
         Data.savings = newSavingsAmount;
         Data.sender = newSenderVal;
-        localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value}));
-        localStorage.setItem("Data", JSON.stringify(Data));
-        displayData();
+        localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value, displayData}));
+        if(!item2){
+          localStorage.setItem("Data", JSON.stringify(Data));
+        }
         loading.style.display = 'flex',
         setTimeout(() => {
           success.style.display = 'flex'
         },3000)
       });
+
+      continueBtn.onclick = () => {
+        location.href='home.html';
+        
+      }
+      displayData();
+      
     } catch (error) {
-      return null
+      return error
     }
     
   }  
-  
 sendFund()
+
+logout.forEach((item) => {
+  item.onclick = () => {
+    location.replace('index.html')
+  }
+})
 
 

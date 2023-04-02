@@ -58,6 +58,10 @@
                     <h3>Support</h3>
                 </a>
             </div>
+
+            <a href="index.html" >
+                <button class="logout">Logout</button>
+            </a>
     
         </div>
 
@@ -121,7 +125,7 @@
                     <div class="home-menu">
                     <img src="images/menubar.png" class="menu-bar" id="menu-bar" alt="menu" width="40px">
                     <a href="home.html">
-                        <h2 class="heading"></h2>
+                        <h2 class="heading" id="heading"></h2>
                     </a>
                     </div>
                     <div>
@@ -362,8 +366,12 @@
 <script>
     let billValue = document.getElementById("bill-pay-value")
     const get = localStorage.getItem("Data")
-    if(get){
+    const item2 = localStorage.getItem("item")
+    const images = document.querySelector(".images")
+    const clientName = document.querySelectorAll("name");
+    if(get || item2){
         billValue.innerHTML =  transactions.childElementCount
+        
     } else{
         billValue.innerHTML =  transactions.childElementCount - 1
     }
