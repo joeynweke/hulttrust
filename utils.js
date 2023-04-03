@@ -48,7 +48,7 @@ const Data2 = {
     bankingId: 'Albertoferrarini5125',
     bankName: 'HULTTRUST BANK',
     name: 'Alberto Ferrarini',
-    bankingPassword: 24221513,
+    bankingPassword: 777322,
     imgURL : 'images/ferrarini.jpg',
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
