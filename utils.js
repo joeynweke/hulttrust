@@ -36,7 +36,7 @@ const Data = {
     bankName: 'HULTTRUST BANK',
     name: 'Franck Lopvet',
     bankingPassword: 24221513,
-    savings: 2877322,
+    savings: 777322,
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
@@ -45,11 +45,11 @@ const Data = {
 }
 
 const Data2 = {
-    bankingId: 'Mikearnold5125',
+    bankingId: 'Albertoferrarini5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Mike Arnold',
+    name: 'Alberto Ferrarini',
     bankingPassword: 24221513,
-    imgURL : 'images/mike.jpg',
+    imgURL : 'images/ferrarini.jpg',
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
@@ -191,25 +191,25 @@ function sendFund() {
         const sentAmount = parseInt(amount.value);
         const senderValue = accountName.value
 
-        if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
-          setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
-            setTimeout(() => {
-              fakeSender.innerHTML = ''
-            },10000)
-          },2000)
-          return;
-        }
+        // if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
+        //   setTimeout(() => {
+        //     fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
+        //     setTimeout(() => {
+        //       fakeSender.innerHTML = ''
+        //     },10000)
+        //   },2000)
+        //   return;
+        // }
 
-        if (sentAmount <= 0 || isNaN(sentAmount)) {
-          setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: Please enter the amount';
-            setTimeout(() => {
-              fakeSender.innerHTML = ''
-            },10000)
-          },2000)
-          return;
-        }
+        // if (sentAmount <= 0 || isNaN(sentAmount)) {
+        //   setTimeout(() => {
+        //     fakeSender.innerHTML = 'ERROR: Please enter the amount';
+        //     setTimeout(() => {
+        //       fakeSender.innerHTML = ''
+        //     },10000)
+        //   },2000)
+        //   return;
+        // }
 
         if(!password.value || !routing.value || !sort.value){
           setTimeout(() => {
@@ -219,12 +219,10 @@ function sendFund() {
             },10000)
           },2000)
           return;
-        }
-
-        if(amount.value > Data.fixedAmount) {
+        } else{
           setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payments,Try again in 15 days';
-          },5000)
+            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payments,Try again in 7 days';
+          },2000)
           return
         }
       
