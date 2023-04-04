@@ -36,7 +36,7 @@ const Data = {
     bankName: 'HULTTRUST BANK',
     name: 'Franck Lopvet',
     bankingPassword: 24221513,
-    savings: 2777322,
+    savings: 777322,
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
