@@ -216,7 +216,7 @@ function sendFund() {
             fakeSender.innerHTML = 'ERROR: All the informations are required';
             setTimeout(() => {
               fakeSender.innerHTML = ''
-            },10000)
+            },5000)
           },2000)
           return;
         }
