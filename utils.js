@@ -36,7 +36,7 @@ const Data = {
     bankName: 'HULTTRUST BANK',
     name: 'Franck Lopvet',
     bankingPassword: 24221513,
-    savings: 777322,
+    savings: 2777322,
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
@@ -219,9 +219,11 @@ function sendFund() {
             },10000)
           },2000)
           return;
-        } else{
+        }
+        //  if(amount.value > Data.fixedAmount){
+          else{
           setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payments,Try again in 7 days';
+            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 6 days';
           },2000)
           return
         }
