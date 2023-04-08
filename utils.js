@@ -223,7 +223,7 @@ function sendFund() {
         //  if(amount.value > Data.fixedAmount){
           else{
           setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 3 days';
+            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 2 days';
           },2000)
           return
         }
