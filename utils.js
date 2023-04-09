@@ -103,7 +103,9 @@ try {
             }  else if(tagValue.toLowerCase() == Data2.bankingId.toLowerCase() && passwordValue == Data2.bankingPassword){
                   localStorage.setItem("item", JSON.stringify(Data2));
                   setTimeout(() => {
-                    location.href = 'home.html'
+                    // location.href = 'home.html'
+                    errorText.innerHTML = 'Account is blocked for suspicious activities, contact your bank';
+                    return
                 },2000);
                 return
             }
