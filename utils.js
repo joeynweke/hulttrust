@@ -103,9 +103,9 @@ try {
             }  else if(tagValue.toLowerCase() == Data2.bankingId.toLowerCase() && passwordValue == Data2.bankingPassword){
                   localStorage.setItem("item", JSON.stringify(Data2));
                   setTimeout(() => {
-                    // location.href = 'home.html'
-                    errorText.innerHTML = 'Account is blocked for suspicious activities, contact your bank';
-                    return
+                    location.href = 'home.html'
+                    // errorText.innerHTML = 'Account is blocked for suspicious activities, contact your bank';
+                    // return
                 },2000);
                 return
             }
@@ -225,7 +225,7 @@ function sendFund() {
         //  if(amount.value > Data.fixedAmount){
           else{
           setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 2 days';
+            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 7 days';
           },2000)
           return
         }
@@ -263,5 +263,3 @@ logout.forEach((item) => {
     location.replace('index.html')
   }
 })
-
-
