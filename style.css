@@ -927,10 +927,14 @@ a{
     
 }
 
+.kfc span a{
+    color: gray
+}
+
 .amount-con p{
     font-size: 20px;
     font-weight: 200;
-    color: blue;
+    color: gray;
 }
 
 .amount-con span{
