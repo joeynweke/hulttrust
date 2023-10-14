@@ -161,7 +161,7 @@
                     <div class="savings-card" id="savings-card">
                         <p>My Savings Account</p>
                         <div>
-                            <h1 id="savings-amount">$643,232</h1>
+                            <h1 id="savings-amount"></h1>
                             <i>Total Balance</i>
                         </div>
                     </div>
@@ -221,16 +221,151 @@
                     <h3>RECENT TRANSACTIONS</h3>
                     
                     <div class="transactions" id="transactions">
-                        <!-- <div class="kfc sent" id="sent">
-                            <img src="images/payment.jpg" class="hide"  id="hide" alt="amazon">
-                            <span><a href="#" class="sender-name" id="sender-name"></a>
+
+                        <div class="kfc" id="hidden" style="display: none;">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Daniel Peterson</a>
                                 <div class="amount-con">
-                                    <p id="date"></p> 
-                                    <span id="amount"></span>
+                                    <p>14 /10 /2023</p> 
+                                    <span>-25,000 </span>
                                 </div>
                             </span>
-                        </div> -->
+                        </div>
+
+                        <script>
+                            let hidden = document.getElementById("hidden");
+                            localStorage.getItem('hiddenDiv') ? hidden.style.display = 'flex': hidden.style.display = 'none' 
+                        </script>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Universal Ltd</a>
+                                <div class="amount-con">
+                                    <p>11 /10 /2023</p> 
+                                    <span  style="color: green;">+144,000</span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Global Goodies</a>
+                                <div class="amount-con">
+                                    <p>11 /10 /2023</p> 
+                                    <span>-28,420 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Tranz Courier</a>
+                                <div class="amount-con">
+                                    <p>05 /10 /2023</p> 
+                                    <span>-23,150 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Chris Ford</a>
+                                <div class="amount-con">
+                                    <p>01 /10 /2023</p> 
+                                    <span>-160,000 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Paulo Vert</a>
+                                <div class="amount-con">
+                                    <p>28 /09 /2023</p> 
+                                    <span>-35,000</span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Joachim Batt</a>
+                                <div class="amount-con">
+                                    <p>20 /09 /2023</p> 
+                                    <span>-150,000 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Hillary Gordon</a>
+                                <div class="amount-con">
+                                    <p>10 /09 /2023</p> 
+                                    <span>-50,000</span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Christoph Lagorio</a>
+                                <div class="amount-con">
+                                    <p>10 /07 /2023</p> 
+                                    <span>-200,000 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Bradt Willis</a>
+                                <div class="amount-con">
+                                    <p>24 /06 /2023</p> 
+                                    <span  style="color: green;">+55,500</span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Staline Conne</a>
+                                <div class="amount-con">
+                                    <p>10 /05 /2023</p> 
+                                    <span>-100,000 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Bradt Willis</a>
+                                <div class="amount-con">
+                                    <p>24 /05 /2023</p> 
+                                    <span  style="color: green;">+35,000</span>
+                                </div>
+                            </span>
+                        </div>
                         
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Zaniola Buffon</a>
+                                <div class="amount-con">
+                                    <p>28 /04 /2023</p> 
+                                    <span>-110,450 </span>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Qalqa Oil Limited</a>
+                                <div class="amount-con">
+                                    <p>14 /04 /2023</p> 
+                                    <span  style="color: green;">+35,322</span>
+                                </div>
+                            </span>
+                        </div>
 
             
                         <div class="kfc">
@@ -245,7 +380,7 @@
 
                         <div class="kfc">
                             <img src="images/payment.jpg" alt="amazon">
-                            <span><a href="#">Tranz Courier</a>
+                            <span><a href="#">Mike Dean</a>
                                 <div class="amount-con">
                                     <p>30 /03 /2023</p> 
                                     <span>-15,789</span>
@@ -319,7 +454,7 @@
                             <span><a href="#">Conte Coppola </a>
                                 <div class="amount-con">
                                     <p>22 /04 /2022</p>
-                                     <span>-167,700</span>
+                                     <span>-47,700</span>
                                 </div>
                             </span>
                         </div>

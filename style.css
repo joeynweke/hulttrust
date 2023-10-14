@@ -379,6 +379,14 @@ span{
     width: 55px;
 }
 
+.receiver{
+    display: none;
+}
+
+.receiver2{
+    display: flex;
+}
+
 .logout{
     font-size: 23px;
     padding: 12px 24px;

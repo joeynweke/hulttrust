@@ -26,18 +26,32 @@ const routing = document.getElementById("routing");
 const sort = document.getElementById("sort");
 const password = document.getElementById("password");
 const continueBtn = document.querySelector("#continue")
+const hidden = document.querySelector("#hidden")
+
+const transactions = document.querySelector("#transactions")
+
 
 const myDate = new Date()
 
 var get = JSON.parse(localStorage.getItem("items"));
+
+let firstAmount = {
+  first: 850000,
+  second: 825000
+} 
+
+localStorage.setItem('savings', firstAmount.first.toLocaleString())
+// localStorage.removeItem('savings')
+
+
 
 const Data = {
     bankingId: 'francklopvet5125',
     bankName: 'HULTTRUST BANK',
     name: 'Franck Lopvet',
     bankingPassword: 24221513,
-    savings: 777122,
-    fixedAmount: 250000,
+    savings: 850456,
+    fixedAmount: 250001,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
     imgURL : 'images/franck.jpg',
@@ -49,12 +63,15 @@ const Data2 = {
     bankName: 'HULTTRUST BANK',
     name: 'Alberto Ferrarini',
     bankingPassword: 24221513,
+    savings: localStorage.getItem("savings2") ? localStorage.getItem("savings2") : localStorage.getItem("savings"),
     imgURL : 'images/ferrarini.jpg',
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
+
+//
 
 function nav(){
   try {
@@ -131,7 +148,6 @@ Login()
 // localStorage.removeItem("item")
 // localStorage.removeItem("items")
 // localStorage.removeItem("Data")
-
 let item2 = JSON.parse(localStorage.getItem("item"));
 const local = JSON.parse(localStorage.getItem("Data"));
 
@@ -175,7 +191,7 @@ const local = JSON.parse(localStorage.getItem("Data"));
         Data.savings = local ? local.savings : savedValue.amountData;
       }
       
-      savingsAmount.innerHTML = "$" + Data.savings.toLocaleString();
+      savingsAmount.innerHTML = "$" + Data2.savings.toLocaleString();
       
     } 
     catch (error) {
@@ -193,25 +209,25 @@ function sendFund() {
         const sentAmount = parseInt(amount.value);
         const senderValue = accountName.value
 
-        // if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
+        if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
 
-        // if (sentAmount <= 0 || isNaN(sentAmount)) {
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: Please enter the amount';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
+        if (sentAmount <= 0 || isNaN(sentAmount)) {
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: Please enter the amount';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
 
         if(!password.value || !routing.value || !sort.value){
           setTimeout(() => {
@@ -223,12 +239,12 @@ function sendFund() {
           return;
         }
         //  if(amount.value > Data.fixedAmount){
-          else{
-          setTimeout(() => {
-            fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 7 days';
-          },2000)
-          return
-        }
+        //   else{
+        //   setTimeout(() => {
+        //     fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 14 days';
+        //   },2000)
+        //   return
+        // }
       
         const Local = JSON.parse(localStorage.getItem("items"))
         const newSavingsAmount = Local.amountData - sentAmount;
@@ -246,11 +262,15 @@ function sendFund() {
       });
 
       continueBtn.onclick = () => {
+        
         location.href='home.html';
+        
+        Data.savings = Data.savings - amount
         
       }
       displayData();
-      
+      localStorage.setItem('hiddenDiv', true)
+      localStorage.setItem('savings2', firstAmount.second.toLocaleString())
     } catch (error) {
       return error
     }
@@ -263,3 +283,4 @@ logout.forEach((item) => {
     location.replace('index.html')
   }
 })
+
