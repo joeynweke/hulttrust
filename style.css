@@ -846,6 +846,10 @@ span{
     background: transparent;
 }
 
+.hideModal{
+    background-color: #fff;
+}
+
 .billpayment-con{
     width: 100%;
     border: none;

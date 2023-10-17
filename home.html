@@ -232,10 +232,6 @@
                             </span>
                         </div>
 
-                        <script>
-                            let hidden = document.getElementById("hidden");
-                            localStorage.getItem('hiddenDiv') ? hidden.style.display = 'flex': hidden.style.display = 'none' 
-                        </script>
 
                         <div class="kfc">
                             <img src="images/payment.jpg" alt="amazon">
@@ -534,5 +530,9 @@
     } else{
         billValue.innerHTML =  transactions.childElementCount - 1
     }
+
+    let hidden = document.getElementById("hidden");
+    localStorage.getItem('hiddenDiv') ? 
+    hidden.style.display = 'flex': hidden.style.display = 'none';
 </script>
 </html>
