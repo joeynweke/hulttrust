@@ -224,14 +224,23 @@
 
                         <div class="kfc" id="hidden" style="display: none;">
                             <img src="images/payment.jpg" alt="amazon">
-                            <span><a href="#">Daniel Peterson</a>
+                            <span><a href="#">Brandon Peterson</a>
                                 <div class="amount-con">
-                                    <p>15 /10 /2023</p> 
+                                    <p id="today-date"></p> 
                                     <span>-25,000 </span>
                                 </div>
                             </span>
                         </div>
 
+                        <div class="kfc">
+                            <img src="images/payment.jpg" alt="amazon">
+                            <span><a href="#">Wesley Kapline</a>
+                                <div class="amount-con">
+                                    <p>16 /11 /2023</p> 
+                                    <span>-74,300 </span>
+                                </div>
+                            </span>
+                        </div>
 
                         <div class="kfc">
                             <img src="images/payment.jpg" alt="amazon">
@@ -242,6 +251,7 @@
                                 </div>
                             </span>
                         </div>
+
 
                         <div class="kfc">
                             <img src="images/payment.jpg" alt="amazon">
@@ -524,6 +534,8 @@
     const item2 = localStorage.getItem("item")
     const images = document.querySelector(".images")
     const clientName = document.querySelectorAll("name");
+    let today = document.getElementById("today-date");
+
     if(get || item2){
         billValue.innerHTML =  transactions.childElementCount
         
@@ -534,5 +546,13 @@
     let hidden = document.getElementById("hidden");
     localStorage.getItem('hiddenDiv') ? 
     hidden.style.display = 'flex': hidden.style.display = 'none';
+
+    const t = new Date();
+    const d = t.getDate();
+    const m = t.getMonth();
+    const y = t.getFullYear();
+
+    const format = `${d} /${m} /${y}`;
+    today.innerHTML = format;
 </script>
 </html>

@@ -53,21 +53,21 @@ const Data = {
     savings: 850456,
     fixedAmount: 250001,
     moneySent: get ? get.moneySent : null,
-    sender :  'Daniel Peterson',
+    sender :  'Daniel Peterson' ,
     imgURL : 'images/franck.jpg',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
 const Data2 = {
-    bankingId: 'Albertoferrarini5125',
+    bankingId: 'danielharrison5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Alberto Ferrarini',
+    name: 'Daniel Harrison',
     bankingPassword: 24221513,
     savings: localStorage.getItem("savings2") ? localStorage.getItem("savings2") : localStorage.getItem("savings"),
-    imgURL : 'images/ferrarini.jpg',
+    imgURL : 'images/daniel.jpg',
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
-    sender :  'Daniel Peterson',
+    sender :  'Brandon Peterson',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
@@ -90,7 +90,7 @@ nav()
 
 const sending = {
     amountData : Data.savings,
-    accountNameData: Data.sender,
+    accountNameData: Data2.sender,
     date: Data.date,
     moneySent : Data.moneySent,
     bankName : Data.bankName,
