@@ -36,8 +36,8 @@ const myDate = new Date()
 var get = JSON.parse(localStorage.getItem("items"));
 
 let firstAmount = {
-  first: 26500,
-  second: 26500
+  first: 865000,
+  second: 840000
 } 
 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
@@ -46,25 +46,25 @@ localStorage.setItem('savings', firstAmount.first.toLocaleString())
 
 
 const Data = {
-    bankingId: 'francklopvet5125',
+    bankingId: 'albertoferrarini5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Franck Lopvet',
+    name: 'Alberto Ferrarini',
     bankingPassword: 24221513,
     savings: 850456,
-    fixedAmount: 250001,
+    fixedAmount: 25000,
     moneySent: get ? get.moneySent : null,
     sender :  'Daniel Peterson' ,
-    imgURL : 'images/franck.jpg',
+    imgURL : 'images/ferrarini.jpg',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
 const Data2 = {
-    bankingId: 'danielharrison5125',
+    bankingId: 'albertoferrarini5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Daniel Harrison',
+    name: 'Alberto Ferrarini',
     bankingPassword: 24221513,
     savings: localStorage.getItem("savings2") ? localStorage.getItem("savings2") : localStorage.getItem("savings"),
-    imgURL : 'images/daniel.jpg',
+    imgURL : 'images/ferrarini.jpg',
     fixedAmount: 250000,
     moneySent: get ? get.moneySent : null,
     sender :  'Brandon Peterson',
@@ -206,57 +206,59 @@ function sendFund() {
     try {
       sendNow.addEventListener("click", (e) => {
         e.preventDefault();
-        setTimeout(() => {
-          fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
-        },2000)
-        
-        // const sentAmount = parseInt(amount.value);
-        // const senderValue = accountName.value
-
-        // if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
-
-        // if (sentAmount <= 0 || isNaN(sentAmount)) {
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: Please enter the amount';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
-
-        // if(!password.value || !routing.value || !sort.value){
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: All the informations are required';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },5000)
-        //   },2000)
-        //   return;
-        // }
-      
-      
-        // const Local = JSON.parse(localStorage.getItem("items"))
-        // const newSavingsAmount = Local.amountData - sentAmount;
-        // const newSenderVal = senderValue.toLocaleString()
-        // Data.savings = newSavingsAmount;
-        // Data.sender = newSenderVal;
-        // localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value, displayData}));
-        // if(!item2){
-        //   localStorage.setItem("Data", JSON.stringify(Data));
-        // }
-        // loading.style.display = 'flex',
         // setTimeout(() => {
-        //   success.style.display = 'flex'
-        // },3000)
+        //   fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
+        // },2000)
+        
+        const sentAmount = parseInt(amount.value);
+        const senderValue = accountName.value
+
+        if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
+
+
+
+        if (sentAmount <= 0 || isNaN(sentAmount)) {
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: Please enter the amount';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
+
+        if(!password.value || !routing.value || !sort.value){
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: All the informations are required';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },5000)
+          },2000)
+          return;
+        }
+      
+      
+        const Local = JSON.parse(localStorage.getItem("items"))
+        const newSavingsAmount = Local.amountData - sentAmount;
+        const newSenderVal = senderValue.toLocaleString()
+        Data.savings = newSavingsAmount;
+        Data.sender = newSenderVal;
+        localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value, displayData}));
+        if(!item2){
+          localStorage.setItem("Data", JSON.stringify(Data));
+        }
+        loading.style.display = 'flex',
+        setTimeout(() => {
+          success.style.display = 'flex'
+        },3000)
       });
 
       continueBtn.onclick = () => {

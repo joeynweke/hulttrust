@@ -590,6 +590,12 @@ span{
     border-radius: 15px;
     background-color: var(--bgc);
     box-shadow: 0px 3px 9px rgb(185, 184, 184);
+    cursor: pointer;
+}
+
+.need-help:hover{
+    background-color: #14141f;
+    color: white
 }
 
 .account-con{
@@ -675,7 +681,7 @@ span{
     max-width: 100%;
     height: 150px;
     margin-right: 25px;
-    
+    cursor: pointer;
 }
 
 .savings-card p{
@@ -693,6 +699,7 @@ span{
     max-width: 100%;
     height: 150px;
     margin-right: 25px;
+    cursor: pointer;
 }
 
 .investment-card,.savings-card, .crypto-card div{
@@ -714,6 +721,7 @@ span{
     width: 250px;
     max-width: 100%;
     height: 150px;
+    cursor: pointer;
 }
 
 .crypto-card p{
