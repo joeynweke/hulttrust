@@ -146,9 +146,9 @@ try {
 Login()
 
 //refresh local storage
-localStorage.removeItem("item")
-localStorage.removeItem("items")
-localStorage.removeItem("Data")
+//localStorage.removeItem("item")
+//localStorage.removeItem("items")
+//localStorage.removeItem("Data")
 let item2 = JSON.parse(localStorage.getItem("item"));
 const local = JSON.parse(localStorage.getItem("Data"));
 
