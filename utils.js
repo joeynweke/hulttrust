@@ -99,7 +99,7 @@ const sending = {
 }
 
 localStorage.setItem('items', JSON.stringify(sending));
-localStorage.removeItem ('items');
+//localStorage.removeItem ('items');
     
 function Login(){
 try {
