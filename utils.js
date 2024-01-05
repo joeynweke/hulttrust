@@ -41,7 +41,7 @@ let firstAmount = {
 } 
 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
-// localStorage.removeItem('savings')
+//localStorage.removeItem('savings')
 
 
 
@@ -90,7 +90,7 @@ nav()
 
 const sending = {
     amountData : Data.savings,
-    accountNameData: Data2.sender,
+    accountNameData: Data.sender,
     date: Data.date,
     moneySent : Data.moneySent,
     bankName : Data.bankName,
@@ -99,6 +99,7 @@ const sending = {
 }
 
 localStorage.setItem('items', JSON.stringify(sending));
+//localStorage.removeItem ('items');
     
 function Login(){
 try {
@@ -145,9 +146,9 @@ try {
 Login()
 
 //refresh local storage
-// localStorage.removeItem("item")
-// localStorage.removeItem("items")
-// localStorage.removeItem("Data")
+//localStorage.removeItem("item")
+//localStorage.removeItem("items")
+//localStorage.removeItem("Data")
 let item2 = JSON.parse(localStorage.getItem("item"));
 const local = JSON.parse(localStorage.getItem("Data"));
 
@@ -206,9 +207,9 @@ function sendFund() {
     try {
       sendNow.addEventListener("click", (e) => {
         e.preventDefault();
-        setTimeout(() => {
-          fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 9 days';
-        },2000)
+        // setTimeout(() => {
+        //   fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
+        // },2000)
         
         // const sentAmount = parseInt(amount.value);
         // const senderValue = accountName.value
