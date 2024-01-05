@@ -36,8 +36,8 @@ const myDate = new Date()
 var get = JSON.parse(localStorage.getItem("items"));
 
 let firstAmount = {
-  first: 865000,
-  second: 840000
+  first: 840000,
+  second: 807000
 } 
 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
@@ -51,9 +51,9 @@ const Data = {
     name: 'Alberto Ferrarini',
     bankingPassword: 24221513,
     savings: 850456,
-    fixedAmount: 25000,
+    fixedAmount: 33000,
     moneySent: get ? get.moneySent : null,
-    sender :  'Daniel Peterson' ,
+    sender :  'Tranz Courier' ,
     imgURL : 'images/ferrarini.jpg',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
@@ -65,9 +65,9 @@ const Data2 = {
     bankingPassword: 24221513,
     savings: localStorage.getItem("savings2") ? localStorage.getItem("savings2") : localStorage.getItem("savings"),
     imgURL : 'images/ferrarini.jpg',
-    fixedAmount: 250000,
+    fixedAmount: 330000,
     moneySent: get ? get.moneySent : null,
-    sender :  'Brandon Peterson',
+    sender :  'Tranz Courier',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
