@@ -41,7 +41,7 @@ let firstAmount = {
 } 
 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
-localStorage.removeItem('savings')
+//localStorage.removeItem('savings')
 
 
 
@@ -99,6 +99,7 @@ const sending = {
 }
 
 localStorage.setItem('items', JSON.stringify(sending));
+localStorage.removeItem ('items');
     
 function Login(){
 try {
