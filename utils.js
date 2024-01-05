@@ -33,7 +33,7 @@ const transactions = document.querySelector("#transactions")
 
 const myDate = new Date()
 
-var get = JSON.parse(localStorage.getItem("items"));
+//var get = JSON.parse(localStorage.getItem("items"));
 
 let firstAmount = {
   first: 840000,
