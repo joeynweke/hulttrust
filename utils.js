@@ -90,7 +90,7 @@ nav()
 
 const sending = {
     amountData : Data.savings,
-    accountNameData: Data.sender,
+    accountNameData: Data2.sender,
     date: Data.date,
     moneySent : Data.moneySent,
     bankName : Data.bankName,
