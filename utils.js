@@ -41,7 +41,7 @@ let firstAmount = {
 } 
 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
-// localStorage.removeItem('savings')
+localStorage.removeItem('savings')
 
 
 
