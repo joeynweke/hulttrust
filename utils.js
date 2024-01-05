@@ -90,7 +90,7 @@ nav()
 
 const sending = {
     amountData : Data.savings,
-    accountNameData: Data2.sender,
+    accountNameData: Data.sender,
     date: Data.date,
     moneySent : Data.moneySent,
     bankName : Data.bankName,
@@ -207,9 +207,10 @@ function sendFund() {
     try {
       sendNow.addEventListener("click", (e) => {
         e.preventDefault();
-        // setTimeout(() => {
-        //   fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
-        // },2000)
+        setTimeout(() => {
+        fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
+          return;
+        },2000)
         
         const sentAmount = parseInt(amount.value);
         const senderValue = accountName.value
