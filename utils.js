@@ -208,7 +208,7 @@ function sendFund() {
       sendNow.addEventListener("click", (e) => {
         e.preventDefault();
         setTimeout(() => {
-          fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again Next Month';
+          fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 9 days';
         },2000)
         
         // const sentAmount = parseInt(amount.value);
