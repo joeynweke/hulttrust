@@ -36,7 +36,7 @@ const myDate = new Date()
 var get = JSON.parse(localStorage.getItem("items"));
 
 let firstAmount = {
-  first: 80900,
+  first: 5120900,
   second: 5607000
 } 
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
@@ -95,7 +95,7 @@ const sending = {
 }
 
 localStorage.setItem('items', JSON.stringify(sending));
-//localStorage.removeItem ('items');
+// localStorage.removeItem ('items');
     
 function Login(){
 try {
