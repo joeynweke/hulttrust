@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
     font-family: 'Open Sans', 'sans-serif';
 }
 
@@ -18,6 +17,10 @@
     --bgcfoot: #ccc;
 }
 
+button{
+    cursor: pointer;
+}
+
 body {
     background-color: white;
     height: 100%;
@@ -28,6 +31,7 @@ body {
     background-repeat: no-repeat;
     background-color: white;
     background-position: fixed;
+    scroll-behavior: smooth;
 }
 
 
@@ -126,9 +130,9 @@ span{
 .main-index-con nav a:hover{
     padding-bottom: 8px;
     transition: all 0.6s ease-in;
-    color: var(--teal);
+    color: var(--light);
     cursor: pointer;
-    border-bottom: 5px solid var(--teal);
+    background: linear-gradient(rgb(0, 191, 255),rgb(6, 186, 132));
 }
 
 .main-index-con p{
@@ -417,12 +421,14 @@ span{
     border: 3px solid var(--teal);
     border-radius: 50%;
     width: 65px;
-    max-width: 100%;
+    object-fit: contain;
+    
 }
 
 .menu-body{
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     padding-top: 15px;
     padding-left: 15px;
@@ -433,6 +439,7 @@ span{
 
 .support,.go-back,.menu-bar{
     cursor: pointer;
+    object-fit: contain;
 }
 
 .support-con{
@@ -543,6 +550,7 @@ span{
     margin-right: 25px;
     margin-bottom: 35px;
     padding: 15px 20px;
+    cursor: pointer;
 }
 
 .emergency-btn, .pause-btn{
@@ -554,7 +562,6 @@ span{
     color: var(--teal);
     font-weight: 900;
 }
-
 
 
 .home-body{
@@ -589,13 +596,19 @@ span{
     border: none;
     border-radius: 15px;
     background-color: var(--bgc);
-    box-shadow: 0px 3px 9px rgb(185, 184, 184);
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #4d4d4d;
     cursor: pointer;
 }
 
 .need-help:hover{
     background-color: #14141f;
     color: white
+}
+
+#name, #welcome{
+    color: #4d4d4d;
 }
 
 .account-con{
@@ -677,17 +690,19 @@ span{
     padding: 15px 15px;
     background-color: var(--teal);
     text-align: start;
-    width: 250px;
+    
     max-width: 100%;
     height: 150px;
     margin-right: 25px;
     cursor: pointer;
+    
 }
 
 .savings-card p{
     font-size: 20px;
     font-weight: 700;
     padding-bottom: 45px;
+    color: #4d4d4d
 }
 
 .investment-card{
@@ -695,7 +710,6 @@ span{
     border-radius: 25px;
     padding: 15px 15px;
     background-color: rgb(26 221 84);
-    width: 250px;
     max-width: 100%;
     height: 150px;
     margin-right: 25px;
@@ -704,6 +718,7 @@ span{
 
 .investment-card,.savings-card, .crypto-card div{
     text-align: left;
+    color: #4d4d4d
 }
 
 
@@ -711,6 +726,7 @@ span{
     padding-bottom: 45px;
     font-size: 20px;
     font-weight: 700;
+    color: #4d4d4d
 }
 
 .crypto-card{
@@ -718,7 +734,6 @@ span{
     border-radius: 25px;
     padding: 15px 15px;
     background-color: rgb(210, 126, 0);
-    width: 250px;
     max-width: 100%;
     height: 150px;
     cursor: pointer;
@@ -728,6 +743,7 @@ span{
     padding-bottom: 45px;
     font-size: 20px;
     font-weight: 700;
+    color: #4d4d4d
 }
 
 .success{
@@ -948,7 +964,7 @@ a{
 }
 
 .kfc span a{
-    color: gray
+    color: gray;
 }
 
 .amount-con p{
@@ -1425,3 +1441,7 @@ footer p{
         border-radius: 6px;
     }
     
+footer div a img{
+    object-fit: contain;
+}
+

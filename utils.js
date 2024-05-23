@@ -36,32 +36,28 @@ const myDate = new Date()
 var get = JSON.parse(localStorage.getItem("items"));
 
 let firstAmount = {
-  first: 807000,
-  second: 807000
+  first: 80900,
+  second: 5607000
 } 
-
 localStorage.setItem('savings', firstAmount.first.toLocaleString())
-//localStorage.removeItem('savings')
-
-
 
 const Data = {
-    bankingId: 'albertoferrarini5125',
+    bankingId: 'vincenzosalemme5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Alberto Ferrarini',
+    name: 'Vincenzo Salemme',
     bankingPassword: 24221513,
-    savings: 850456,
+    savings: 890456,
     fixedAmount: 33000,
     moneySent: get ? get.moneySent : null,
-    sender :  'Tranz Courier' ,
-    imgURL : 'images/ferrarini.jpg',
+    sender :  'Tranz Courier',
+    imgURL : 'images/vincenzo.jpg',
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
 const Data2 = {
-    bankingId: 'albertoferrarini5125',
+    bankingId: 'vincenzosalemme5125',
     bankName: 'HULTTRUST BANK',
-    name: 'Alberto Ferrarini',
+    name: 'Vincenzo Salemme',
     bankingPassword: 24221513,
     savings: localStorage.getItem("savings2") ? localStorage.getItem("savings2") : localStorage.getItem("savings"),
     imgURL : 'images/ferrarini.jpg',
@@ -71,7 +67,7 @@ const Data2 = {
     date: `${myDate.getDate()} /${myDate.getMonth() <= 9 ? '0'+Number(myDate.getMonth() + 1) : Number(myDate.getMonth() + 1)} /${myDate.getFullYear()}`
 }
 
-//
+
 
 function nav(){
   try {
@@ -90,7 +86,7 @@ nav()
 
 const sending = {
     amountData : Data.savings,
-    accountNameData: Data2.sender,
+    accountNameData: Data.sender,
     date: Data.date,
     moneySent : Data.moneySent,
     bankName : Data.bankName,
@@ -145,10 +141,11 @@ try {
 }
 Login()
 
-//refresh local storage
-//localStorage.removeItem("item")
-//localStorage.removeItem("items")
-//localStorage.removeItem("Data")
+
+// localStorage.removeItem("item")
+// localStorage.removeItem("items")
+// localStorage.removeItem("Data")
+
 let item2 = JSON.parse(localStorage.getItem("item"));
 const local = JSON.parse(localStorage.getItem("Data"));
 
@@ -207,59 +204,59 @@ function sendFund() {
     try {
       sendNow.addEventListener("click", (e) => {
         e.preventDefault();
-        setTimeout(() => {
-          fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 9 days';
-        },2000)
-        
-        // const sentAmount = parseInt(amount.value);
-        // const senderValue = accountName.value
-
-        // if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
-
-
-
-        // if (sentAmount <= 0 || isNaN(sentAmount)) {
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: Please enter the amount';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },10000)
-        //   },2000)
-        //   return;
-        // }
-
-        // if(!password.value || !routing.value || !sort.value){
-        //   setTimeout(() => {
-        //     fakeSender.innerHTML = 'ERROR: All the informations are required';
-        //     setTimeout(() => {
-        //       fakeSender.innerHTML = ''
-        //     },5000)
-        //   },2000)
-        //   return;
-        // }
-      
-      
-        // const Local = JSON.parse(localStorage.getItem("items"))
-        // const newSavingsAmount = Local.amountData - sentAmount;
-        // const newSenderVal = senderValue.toLocaleString()
-        // Data.savings = newSavingsAmount;
-        // Data.sender = newSenderVal;
-        // localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value, displayData}));
-        // if(!item2){
-        //   localStorage.setItem("Data", JSON.stringify(Data));
-        // }
-        // loading.style.display = 'flex',
         // setTimeout(() => {
-        //   success.style.display = 'flex'
-        // },3000)
+        //   fakeSender.innerHTML = 'ERROR: You have exceeded your monthly payment limit,Try again in 9 days';
+        // },2000)
+        
+        const sentAmount = parseInt(amount.value);
+        const senderValue = accountName.value
+
+        if(senderValue.toLowerCase() !== get.accountNameData.toLowerCase()){
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: This account is not a beneficiary';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
+
+
+
+        if (sentAmount <= 0 || isNaN(sentAmount)) {
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: Please enter the amount';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },10000)
+          },2000)
+          return;
+        }
+
+        if(!password.value || !routing.value || !sort.value){
+          setTimeout(() => {
+            fakeSender.innerHTML = 'ERROR: All the informations are required';
+            setTimeout(() => {
+              fakeSender.innerHTML = ''
+            },5000)
+          },2000)
+          return;
+        }
+      
+      
+        const Local = JSON.parse(localStorage.getItem("items"))
+        const newSavingsAmount = Local.amountData - sentAmount;
+        const newSenderVal = senderValue.toLocaleString()
+        Data.savings = newSavingsAmount;
+        Data.sender = newSenderVal;
+        localStorage.setItem("items", JSON.stringify({ amountData: newSavingsAmount, accountNameData: newSenderVal, moneySent: amount.value, displayData}));
+        if(!item2){
+          localStorage.setItem("Data", JSON.stringify(Data));
+        }
+        loading.style.display = 'flex',
+        setTimeout(() => {
+          success.style.display = 'flex'
+        },3000)
       });
 
       continueBtn.onclick = () => {
@@ -284,4 +281,3 @@ logout.forEach((item) => {
     location.replace('index.html')
   }
 })
-
