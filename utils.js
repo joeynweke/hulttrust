@@ -189,7 +189,7 @@ const local = JSON.parse(localStorage.getItem("Data"));
         Data.savings = local ? local.savings : savedValue.amountData;
       }
       
-      savingsAmount.innerHTML = "$" + Data2.savings.toLocaleString();
+      savingsAmount.innerHTML = "&euro;" + Data2.savings.toLocaleString();
       
     } 
     catch (error) {
