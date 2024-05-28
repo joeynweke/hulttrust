@@ -267,8 +267,8 @@ function sendFund() {
         
       }
       displayData();
-      localStorage.setItem('hiddenDiv', true)
-      localStorage.setItem('savings2', firstAmount.second.toLocaleString())
+      //localStorage.setItem('hiddenDiv', true)
+      // localStorage.setItem('savings2', firstAmount.second.toLocaleString())
     } catch (error) {
       return error
     }
